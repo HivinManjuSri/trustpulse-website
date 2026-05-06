@@ -3,7 +3,8 @@ import hivinImage from '../member_face/Hivin Mnaju Sri.png'
 import senarthImage from '../member_face/Senarth  Rajapakse.jpeg'
 import pahansaraImage from '../member_face/Pahansara Sithmini.png'
 import pavaniImage from '../member_face/Pawani roziro.png'
-
+import harindraImage from '../member_face/harindra.jpg'
+import thiiniImage from '../member_face/dinithip.jpeg'
 const CONTACT_EMAIL = 'hivinmanjusri@gmail.com'
 
 /* SITE CONTENT - Replace this object for other groups */
@@ -262,6 +263,7 @@ const SITE = {
       role: 'Research Supervisor',
       email: 'harinda.f@sliit.lk',
       initials: 'HF',
+      image: harindraImage,
       color: '#515154',
       type: 'supervisor',
     },
@@ -271,6 +273,7 @@ const SITE = {
       role: 'Research Co-Supervisor',
       email: 'dinithi.p@sliit.lk',
       initials: 'DP',
+      image: thiiniImage,
       color: '#515154',
       type: 'supervisor',
     },
@@ -974,7 +977,7 @@ function Team() {
 }
 
 function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState({ email: '', subject: '', message: '' })
   const [status, setStatus] = useState('idle')
   const [feedback, setFeedback] = useState('')
 
@@ -985,19 +988,12 @@ function Contact() {
 
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
-    if (status === 'sending') return
 
-    const name = form.name.trim()
     const email = form.email.trim()
+    const subject = form.subject.trim()
     const message = form.message.trim()
-
-    if (!name) {
-      setStatus('error')
-      setFeedback('Name is required.')
-      return
-    }
 
     if (!email || !isValidEmail(email)) {
       setStatus('error')
@@ -1005,54 +1001,36 @@ function Contact() {
       return
     }
 
+    if (!subject) {
+      setStatus('error')
+      setFeedback('Subject is required.')
+      return
+    }
+
     if (!message) {
       setStatus('error')
-      setFeedback('Message is required.')
+      setFeedback('Content is required.')
       return
     }
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    const params = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to: CONTACT_EMAIL,
+      su: subject,
+      body: `From: ${email}\n\n${message}`,
+    })
+    const gmailUrl = `https://mail.google.com/mail/?${params.toString()}`
+    const gmailWindow = window.open(gmailUrl, '_blank')
 
-    if (!serviceId || !templateId || !publicKey) {
-      setStatus('error')
-      setFeedback('Email service is not configured yet. Add the EmailJS environment variables and rebuild the app.')
+    if (!gmailWindow) {
+      window.location.href = gmailUrl
       return
     }
 
-    setStatus('sending')
-    setFeedback('')
-
-    try {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          service_id: serviceId,
-          template_id: templateId,
-          user_id: publicKey,
-          template_params: {
-            to_email: CONTACT_EMAIL,
-            from_name: name,
-            from_email: email,
-            reply_to: email,
-            message,
-          },
-        }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Email service request failed.')
-      }
-
-      setForm({ name: '', email: '', message: '' })
-      setStatus('success')
-      setFeedback('Your message has been sent successfully.')
-    } catch (error) {
-      setStatus('error')
-      setFeedback('Sorry, the message could not be sent. Please try again later.')
-    }
+    gmailWindow.opener = null
+    setStatus('success')
+    setFeedback('Gmail opened with your message details.')
   }
 
   const inputStyle = {
@@ -1113,34 +1091,31 @@ function Contact() {
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', marginBottom: 20 }}>Send a Message</h3>
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }} noValidate>
               <input
-                type="text"
-                placeholder="Your Name"
-                value={form.name}
-                onChange={e => updateField('name', e.target.value)}
-                disabled={status === 'sending'}
-                aria-label="Your name"
-                style={inputStyle}
-                onFocus={e => e.target.style.borderColor = 'var(--accent)'}
-                onBlur={e => e.target.style.borderColor = 'var(--gray-200)'}
-              />
-              <input
                 type="email"
                 placeholder="Your Email"
                 value={form.email}
                 onChange={e => updateField('email', e.target.value)}
-                disabled={status === 'sending'}
                 aria-label="Your email"
                 style={inputStyle}
                 onFocus={e => e.target.style.borderColor = 'var(--accent)'}
                 onBlur={e => e.target.style.borderColor = 'var(--gray-200)'}
               />
+              <input
+                type="text"
+                placeholder="Subject"
+                value={form.subject}
+                onChange={e => updateField('subject', e.target.value)}
+                aria-label="Subject"
+                style={inputStyle}
+                onFocus={e => e.target.style.borderColor = 'var(--accent)'}
+                onBlur={e => e.target.style.borderColor = 'var(--gray-200)'}
+              />
               <textarea
-                placeholder="Your Message"
+                placeholder="Content"
                 rows={4}
                 value={form.message}
                 onChange={e => updateField('message', e.target.value)}
-                disabled={status === 'sending'}
-                aria-label="Your message"
+                aria-label="Content"
                 style={{ ...inputStyle, resize: 'vertical' }}
               onFocus={e => e.target.style.borderColor = 'var(--accent)'}
               onBlur={e => e.target.style.borderColor = 'var(--gray-200)'}
@@ -1160,14 +1135,11 @@ function Contact() {
               <button
                 type="submit"
                 className="btn btn-primary"
-                disabled={status === 'sending'}
                 style={{
                   alignSelf: 'flex-start',
-                  opacity: status === 'sending' ? 0.65 : 1,
-                  cursor: status === 'sending' ? 'not-allowed' : 'pointer',
                 }}
               >
-                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                Open Gmail
               </button>
             </form>
           </div>
