@@ -220,7 +220,7 @@ const SITE = {
     {
       name: 'Hivin Manju Sri',
       id: 'IT22576552',
-      role: 'Group Team Leader',
+      role: 'Team Leader',
       email: 'hivinmanjusri@gmail.com',
       initials: 'HM',
       image: hivinImage,
@@ -248,7 +248,7 @@ const SITE = {
       type: 'member',
     },
     {
-      name: 'Pavani Rozairo',
+      name: 'Pawani Rozairo',
       id: 'IT22194008',
       role: 'Team Member',
       email: 'rozairopawani001@gmail.com',
