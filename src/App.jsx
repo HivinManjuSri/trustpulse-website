@@ -10,7 +10,7 @@ const CONTACT_EMAIL = 'hivinmanjusri@gmail.com'
 /* SITE CONTENT - Replace this object for other groups */
 const SITE = {
   projectTitle: 'MEDIconsult',
-  projectSubtitle: 'Zero Trust Architecture in Remote Healthcare Using Multi-Modal Biometrics',
+  projectSubtitle: 'REMOTE HEALTHCARE CONSULTATION IN ZERO TRUST ARCHITECTURE USING MULTI-MODAL BIOMETRICS',
   projectTagline: 'A Zero Trust telehealth platform that continuously verifies clinicians so patients can trust who is on the other side of the consultation.',
   groupNo: '25-26J-046',
   institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
