@@ -74,6 +74,25 @@ const SITE = {
     },
   ],
 
+  references: [
+    `J. Jung, S. Kim, and H. Kim, "Zero Trust Architecture for Cloud and IoT: A Comprehensive Survey," IEEE Access, vol. 10, pp. 12345-12367, 2022.`,
+    `N. Brümmer and E. de Villiers, "The speaker partitioning problem," in Proc. Odyssey Speaker and Language Recognition Workshop, 2010, pp. 194-201.`,
+    `J. Desplanques, J. Thienpondt, and K. Demuynck, "ECAPA-TDNN: Emphasized Channel Attention, Propagation and Aggregation in TDNN based speaker verification," in Proc. Interspeech, 2020, pp. 3830-3834.`,
+    `S. Chen, C. Wang, Z. Chen, Y. Wu, and S. Liu, "WavLM: Large-Scale Self-Supervised Pre-Training for Full Stack Speech Processing," IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505-1518, Oct. 2022.`,
+    `X. Wang et al., "ASVspoof 2021: Accelerating progress in spoofed and deepfake speech detection," in Proc. Interspeech, 2021, pp. 4236-4240.`,
+    `A. Nagrani, J. S. Chung, and A. Zisserman, "VoxCeleb: A large-scale speaker identification dataset," in Proc. Interspeech, 2017, pp. 2616-2620.`,
+    `Mozilla, "Common Voice: A massively-multilingual speech corpus," [Online]. Available: https://commonvoice.mozilla.org/. [Accessed: Aug. 25, 2025].`,
+    `N. Carlini and D. Wagner, "Audio adversarial examples: Targeted attacks on speech-to-text," in Proc. IEEE Security and Privacy Workshops (SPW), 2018, pp. 1-7.`,
+    `Y. Zhang et al., "Few-Shot Speaker Adaptation with Meta Learning," in Proc. ICASSP, 2019, pp. 6186-6190.`,
+    `Y. Wang et al., "Generalized Zero-Shot Voice Style Transfer with Only One Example," in Proc. Interspeech, 2021, pp. 1867-1871.`,
+    `M. Abuhamad, T. AbuHmed, D. Mohaisen, and D. Nyang, "Large-Scale and Content-Agnostic Malware Detection with Graph Embeddings," in Proc. NDSS, 2020.`,
+    `R. Sanka, "Healthcare Cybersecurity Challenges in Developing Countries: A Sri Lankan Perspective," Sri Lanka Journal of Bio-Medical Informatics, vol. 12, no. 1, pp. 23-30, 2021.`,
+    `M. Rose, "Zero Trust for Healthcare: A Technical Deep Dive," Journal of Health Informatics Security, vol. 8, no. 2, pp. 45-58, 2022.`,
+    `S. K. Rane and P. D. O’Neill, "Multimodal Biometric Authentication: A Review," ACM Computing Surveys, vol. 55, no. 6, pp. 1-35, 2023.`,
+    `P. Singh et al., "Keystroke Dynamics for Continuous User Authentication," Computers & Security, vol. 100, pp. 102089, 2021.`,
+    `M. A. Hossain, M. Hasan, and S. Chakraborty, "Mouse Dynamics as a Behavioral Biometric," Pattern Recognition Letters, vol. 147, pp. 1-7, 2021.`,
+  ],
+
   components: [
     {
       id: 'face-recognition',
@@ -188,15 +207,15 @@ const SITE = {
     { id: 1, title: 'Project Proposal', date: 'Aug 2025', status: 'done', desc: 'Initial research proposal submitted. Research gap identified, scope defined, and methodology outlined.' },
     { id: 2, title: 'Progress Presentation I', date: 'Nov 2025', status: 'done', desc: 'System architecture finalised. Individual component designs presented.' },
     { id: 3, title: 'Progress Presentation II', date: 'Mar 2026', status: 'done', desc: 'Core components implemented. Evaluation data implemented. 90% of the project is finished.' },
-    { id: 4, title: 'Final Assessment', date: 'May 2026', status: 'upcoming', desc: 'Final platform integration, evaluation, and project demonstration.' },
-    { id: 5, title: 'Research Paper Submission', date: 'May 2026', status: 'upcoming', desc: 'Research paper preparation and submission planned.' },
-    { id: 6, title: 'Viva', date: 'Jul 2026', status: 'upcoming', desc: 'Defence of research contributions and live demonstration of the MEDIconsult platform.' },
+    { id: 4, title: 'Final Assessment', date: 'May 2026', status: 'done', desc: 'Final platform integration, evaluation, and project demonstration.' },
+    { id: 5, title: 'Research Paper Submission', date: 'May 2026', status: 'done', desc: 'Research paper preparation and submission planned.' },
+    { id: 6, title: 'Viva', date: 'May 2026', status: 'done', desc: 'Defence of research contributions and live demonstration of the MEDIconsult platform.' },
   ],
 
   documents: [
     { title: 'TAF', type: 'PDF', status: 'available', url: 'https://mysliit-my.sharepoint.com/:b:/g/personal/it22602664_my_sliit_lk/IQCVKus56tPXR5NLLresyTqyASkXT-3gOO4GLkxgS8DcZkU?e=bC1yl6' },
-    { title: 'Checklist 1', type: 'PDF', status: 'available', url: 'https://mysliit-my.sharepoint.com/:b:/g/personal/it22602664_my_sliit_lk/IQARxxleOhF-RJY1E-UVDHAcAf-8JwXULDQPJD8nLB-emsM?e=KKIjlu' },
-    { title: 'Checklist 2', type: 'PDF', status: 'available', url: 'https://mysliit-my.sharepoint.com/:b:/g/personal/it22602664_my_sliit_lk/IQC5Sp18ONqeSr5-RW5czq06AexaSJOPCJbLOubgXw99TD0?e=k6Iga6' },
+    { title: 'Checklist 1', type: 'PDF', status: 'completed', url: 'https://mysliit-my.sharepoint.com/:b:/g/personal/it22602664_my_sliit_lk/IQARxxleOhF-RJY1E-UVDHAcAf-8JwXULDQPJD8nLB-emsM?e=KKIjlu' },
+    { title: 'Checklist 2', type: 'PDF', status: 'completed', url: 'https://mysliit-my.sharepoint.com/:b:/g/personal/it22602664_my_sliit_lk/IQC5Sp18ONqeSr5-RW5czq06AexaSJOPCJbLOubgXw99TD0?e=k6Iga6' },
     {
       title: 'Project Proposal',
       type: 'PDF',
@@ -209,7 +228,18 @@ const SITE = {
       ],
     },
     { title: 'Research Paper', type: 'PDF', status: 'available', url: 'https://drive.google.com/file/d/1PkEd4cr1eaIJctWTJI3gwGbsFxwX7cB1/view?usp=sharing' },
-    { title: 'Final Report', type: 'PDF', status: 'pending', url: '#' },
+    {
+      title: 'Final Report Draft',
+      type: 'Doc',
+      status: 'available',
+      members: [
+        { name: 'Hivin Manju Sri', id: 'IT22576552', url: 'https://docs.google.com/document/d/1qhJTTY6NVeD1SqZRlfdgSWnEMvycmlms/edit?usp=sharing&ouid=113698697415352410216&rtpof=true&sd=true' },
+        { name: 'Senarth Rajapakse', id: 'IT22602664', url: 'https://drive.google.com/file/d/1fNwynyJYfshq39jJzKTCtGQ1urqUmTOi/view?usp=sharing' },
+        { name: 'pahansara Dias', id: 'IT22133090', url: 'https://docs.google.com/document/d/1xQFSYncQ5JjHeZEh3G-nQNhlog6iwiuU/edit?usp=drive_link&ouid=109467472326975425688&rtpof=true&sd=true' },
+        { name: 'Pavani Rozairo', id: 'IT22194008', url: 'https://drive.google.com/file/d/1LeALxtyGUXH8w_LR50J8ZaMGQeRiYMRH/view?usp=drive_link' },
+      ],
+    },
+    { title: 'Thesis', type: 'Doc', status: 'available', url: 'https://mysliit.sharepoint.com/:w:/s/CDAPSubmissionCloud/IQBI5gIVtJ67Rof51Vb966EeAXkiIeedfS8z-L0q5iosdO0?e=aBMMaE' },
   ],
 
   presentations: [
@@ -490,6 +520,7 @@ function Domain() {
     { id: 'objectives', label: 'Objectives' },
     { id: 'methodology', label: 'Methodology' },
     { id: 'technologies', label: 'Technologies' },
+    { id: 'references', label: 'References/Citation' },
   ]
 
   return (
@@ -594,6 +625,18 @@ function Domain() {
                       ))}
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {activeTab === 'references' && (
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', marginBottom: 20 }}>References/Citation</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {SITE.references.map((reference, i) => (
+                  <p key={i} style={{ fontSize: '13px', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                    [{i + 1}] {reference}
+                  </p>
                 ))}
               </div>
             </div>
@@ -765,6 +808,8 @@ function Milestones() {
 function DocCard({ item, type }) {
   const isPending = item.status === 'pending'
   const [open, setOpen] = useState(false)
+  const itemType = item.type || (type === 'slides' ? 'Slides' : 'PDF')
+  const statusLabel = item.status === 'completed' ? 'Completed' : itemType
   if (item.members) {
     return (
       <div style={{
@@ -785,7 +830,7 @@ function DocCard({ item, type }) {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '14px', color: 'var(--accent)',
             }}>
-              PDF
+              {itemType}
             </div>
             <div>
               <div style={{ fontSize: '14px', fontWeight: 500, color: 'var(--gray-800)' }}>{item.title}</div>
@@ -796,7 +841,7 @@ function DocCard({ item, type }) {
             color: 'var(--accent)', background: 'rgba(0,102,204,0.08)',
             padding: '4px 10px', borderRadius: 20,
           }}>
-            {open ? 'Hide' : 'PDFs'}
+            {open ? 'Hide' : `${itemType}s`}
           </span>
         </button>
 
@@ -816,7 +861,7 @@ function DocCard({ item, type }) {
                   color: 'var(--accent)', background: 'rgba(0,102,204,0.08)',
                   padding: '4px 10px', borderRadius: 20, flexShrink: 0,
                 }}>
-                  PDF
+                  {itemType}
                 </a>
               </div>
             ))}
@@ -844,7 +889,7 @@ function DocCard({ item, type }) {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: '14px', color: isPending ? 'var(--gray-400)' : 'var(--accent)',
         }}>
-          {type === 'slides' ? 'Slides' : 'PDF'}
+          {itemType}
         </div>
         <div>
           <div style={{ fontSize: '14px', fontWeight: 500, color: 'var(--gray-800)' }}>{item.title}</div>
@@ -857,7 +902,7 @@ function DocCard({ item, type }) {
         background: isPending ? 'var(--gray-50)' : 'rgba(0,102,204,0.08)',
         padding: '4px 10px', borderRadius: 20,
       }}>
-        {isPending ? 'Pending' : item.type || 'Slides'}
+        {isPending ? 'Pending' : statusLabel}
       </span>
     </a>
   )
